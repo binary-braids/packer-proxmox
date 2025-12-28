@@ -25,10 +25,6 @@ jobs:
       - name: Checkout 🔔
         uses: actions/checkout@v6.0.1
 
-      - name: Install Ansible 🖥️
-        run: |
-          python3 -m pip install --user ansible
-
       - name: Install Packer 🖥️
         run: |
           ansible-playbook packer_install.yml
