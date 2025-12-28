@@ -1,0 +1,53 @@
+#cloud-config
+autoinstall:
+  version: 1
+  early-commands:
+  # Stop SSH to prevent Packer from connecting too early
+  - systemctl stop ssh
+  hostname: pkr-ubuntu-2404
+  timezone: Africa/Johannesburg
+  locale: en_ZA
+  keyboard:
+    layout: us
+  storage:
+    layout:
+      name: lvm
+      sizing-policy: all
+  network:
+    version: 2
+    ethernets:
+      alleths:
+        match:
+          name: e*
+        dhcp4: true
+  ssh:
+    install-server: yes
+    allow-pw: false
+  package_update: true
+  package_upgrade: true
+  packages:
+    - qemu-guest-agent
+    - cloud-init
+  user-data:
+    users:
+    - name: bb-admin
+      gecos: Binary Braids Admin
+      groups: users, admin, wheel
+      sudo: ALL=(ALL) NOPASSWD:ALL
+      shell: /bin/bash
+      lock_passwd: true
+      ssh_authorized_keys:
+        - #{BB_ADMIN_SSH_KEY}#   
+    - name: ansible-admin
+      gecos: Ansible Admin User
+      groups: users, admin, wheel
+      sudo: ALL=(ALL) NOPASSWD:ALL
+      shell: /bin/bash
+      lock_passwd: true
+      ssh_authorized_keys:
+        - #{ANSIBLE_SSH_KEY}#
+
+  
+  
+
+
