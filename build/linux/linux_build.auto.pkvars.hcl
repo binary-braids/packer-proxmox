@@ -1,4 +1,4 @@
-proxmox_url = "#{PROXMOX_API_URL}#"
+proxmox_url = "#{PROXMOX_URL}#"
 proxmox_username = "#{PROXMOX_USERNAME}"
 proxmox_token = "#{PROXMOX_TOKEN}"
 
