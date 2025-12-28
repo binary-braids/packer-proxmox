@@ -25,6 +25,16 @@ jobs:
       - name: Checkout 🔔
         uses: actions/checkout@v6.0.1
 
+      - name: Install pipx 🖥️
+        run: |
+          sudo apt update
+          sudo apt install pipx
+          pipx ensurepath
+
+      - name: Install Ansible 🖥️
+        run: |
+          pipx install --include-deps ansible
+
       - name: Install Packer 🖥️
         run: |
           ansible-playbook packer_install.yml
