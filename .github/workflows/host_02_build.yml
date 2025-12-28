@@ -27,8 +27,8 @@ jobs:
 
       - name: Install pipx 🖥️
         run: |
-          sudo apt update
-          sudo apt install pipx
+          sudo apt update -y
+          sudo apt install pipx -y
           pipx ensurepath
 
       - name: Install Ansible 🖥️
