@@ -1,9 +1,9 @@
 - name: Remove Packer artifact
   community.proxmox.proxmox_kvm:
-    api_host: "#{REMOTE_HOST}#"
-    api_user: "#{REMOTE_USERNAME}#"
-    api_password: "#{REMOTE_PASSWORD}#"
+    api_host: "#{PROXMOX_NODE}#"
+    api_user: "#{PROXMOX_USERNAME}#"
+    api_password: "#{PROXMOX_TOKEN}#"
     name: "{{ VM_NAME }}"
-    node: "#{REMOTE_HOST}#"
+    node: "#{PROXMOX_NODE}#"
     state: absent
   delegate_to: localhost
