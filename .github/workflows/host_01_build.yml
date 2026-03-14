@@ -35,7 +35,7 @@ jobs:
         working-directory: ./ansible
 
       - name: Map Secrets to Environment Variables 🗺️ 
-        uses: oNaiPs/secrets-to-env-action@v1.7
+        uses: oNaiPs/secrets-to-env-action@75f319b3c8c926ac2eabcca34daa6cf531daf32f # v1.8
         with:
             secrets: ${{ toJSON(secrets) }}        
 
