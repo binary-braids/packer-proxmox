@@ -40,7 +40,7 @@ jobs:
             secrets: ${{ toJSON(secrets) }}        
 
       - name: Replace Tokens 🪙
-        uses: qetza/replacetokens-action@v1.2.1
+        uses: qetza/replacetokens-action@78be0760a482930501bc80465505fe274a5a620d # v2.0.0
         with:
           sources: '**/*.*'
           variables: '[${{ toJSON(secrets) }}]'
