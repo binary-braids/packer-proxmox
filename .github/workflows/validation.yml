@@ -27,7 +27,7 @@ jobs:
         token: ${{ steps.generate-token.outputs.token }}
 
     - name: Setup Packer 🖥️
-      uses: hashicorp/setup-packer@main
+      uses: hashicorp/setup-packer@c4e4b2636b98ce7566f9ec9c309e26821f695bd2 # main
 
     - name: Run Packer Format 📝
       run: |
