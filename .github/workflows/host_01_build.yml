@@ -23,7 +23,7 @@ jobs:
     steps:
 
       - name: Checkout 🔔
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - name: Install Ansible 🖥️
         run: |
@@ -35,12 +35,12 @@ jobs:
         working-directory: ./ansible
 
       - name: Map Secrets to Environment Variables 🗺️ 
-        uses: oNaiPs/secrets-to-env-action@v1.7
+        uses: oNaiPs/secrets-to-env-action@be0f849b5f57bce2c73624f006578c3b16e98e0c # v1.7
         with:
             secrets: ${{ toJSON(secrets) }}        
 
       - name: Replace Tokens 🪙
-        uses: qetza/replacetokens-action@v1.2.1
+        uses: qetza/replacetokens-action@e693b63d0fac410b1ae61d82cbc540c12f205556 # v1.2.1
         with:
           sources: '**/*.*'
           variables: '[${{ toJSON(secrets) }}]'
